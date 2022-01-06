@@ -17,7 +17,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
 
-    <title>Rock Scissors Paper</title>
+    <title>Rock Paper Scissors</title>
 
 </head>
 
@@ -25,34 +25,43 @@
 
 
     <div class="container-fluid">
-        <h1>Rock, Scissors, Paper</h1>
+        <h1>Rock Paper Scissors</h1>
         <div class="player">
             <div>
                 <button class="choose" id="rock"><img src="assets/images/rock2.png" alt=""></button>
-
-            </div>
-
-            <div>
-                <button class="choose" id="scissors"><img src="assets/images/scissors2.png" alt=""></button>
 
             </div>
             <div>
                 <button class="choose" id="paper"><img src="assets/images/paper2.png" alt=""></button>
 
             </div>
+            <div>
+                <button class="choose" id="scissors"><img src="assets/images/scissors2.png" alt=""></button>
+
+            </div>
 
         </div>
     </div>
+    <div id="valor"></div>
     <div class="container-fluid results ">
         <div id="player-choice"></div>
         <div id="computer"></div>
 
 
     </div>
-    <div id="valor"></div>
+
+    <div class="counter container-fluid">
+        <div id="you">
+            You :
+            <span class="result-score" data-your-score>0</span>
+        </div>
+        <div id="comp">
+            Computer :
+            <span class="result-score" data-computer-score> 0</span>
+        </div>
 
 
-    <script src="main.js"></script>
+        <script src="main.js"></script>
 </body>
 
 </html>
