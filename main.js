@@ -1,25 +1,24 @@
-
+// options
 let rock = document.getElementById("rock");
 let scissors = document.getElementById("scissors");
 let paper = document.getElementById("paper");
 
+//results
+let result = document.getElementById("player-choice");
+let computer = document.getElementById("computer");
+let computer_choice;
+
+// audios
 let rockwins = 'assets/images/rock.mp3';
 let scissorswins = 'assets/images/scissors.mp3';
 let paperwins = 'assets/images/paper.mp3';
 let tie = "assets/images/bell.mp3";
 
-let result = document.getElementById("player-choice");
-let computer = document.getElementById("computer");
-let computer_choice;
-
-
-
-
+//counter
 const computerScoreSpan = document.querySelector('[data-computer-score]');
 const yourScoreSpan = document.querySelector('[data-your-score]');
 
 function playGame() {
-
 
     rock.addEventListener('click', () => {
         result.innerHTML = "<img src='assets/images/rockangrybis.jpg' />";
@@ -51,9 +50,8 @@ function playGame() {
     scissors.addEventListener('click', () => {
         result.innerHTML = "<img src='assets/images/scissorsangrybis.png' />";
         let resultado = 1;
-
+        changeText();
         computerChoice();
-
 
         if (resultado == computer_choice) {
             document.getElementById("valor").innerHTML = "Tie";
@@ -78,8 +76,7 @@ function playGame() {
 
     paper.addEventListener('click', () => {
         result.innerHTML = "<img src='assets/images/paperangrybis.png' />";
-        let resultado = document.getElementById("valor");
-        resultado = 2;
+        let resultado = 2;
         changeText();
         computerChoice();
 
@@ -140,7 +137,5 @@ function changeText() {
 
     document.querySelector('.start button').innerHTML = "Restart game";
 }
-
-
 
 playGame();
