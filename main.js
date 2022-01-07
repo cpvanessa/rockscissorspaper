@@ -69,7 +69,7 @@ function playGame() {
         else {
 
             document.getElementById("valor").innerHTML = "Scissors wins paper, you win!";
-            audioWinner(scissors);
+            audioWinner(scissorswins);
             incrementScore(yourScoreSpan);
         }
     })
