@@ -12,98 +12,99 @@ let result = document.getElementById("player-choice");
 let computer = document.getElementById("computer");
 let computer_choice;
 
+
+
+
 const computerScoreSpan = document.querySelector('[data-computer-score]');
 const yourScoreSpan = document.querySelector('[data-your-score]');
 
+function playGame() {
 
 
+    rock.addEventListener('click', () => {
+        result.innerHTML = "<img src='assets/images/rockangrybis.jpg' />";
+        let resultado = 0;
+        changeText();
+        computerChoice();
 
-rock.addEventListener('click', () => {
+        if (resultado == computer_choice) {
+            document.getElementById("valor").innerHTML = "Tie";
+            audioWinner(tie);
 
-   
-    result.innerHTML = "<img src='assets/images/rockangrybis.jpg' />";
-    let resultado = 0;
-    
-    computerChoice();
-    
-    if (resultado == computer_choice) {
-        document.getElementById("valor").innerHTML = "Tie";
-        audioWinner(tie);
+        }
+        else if (computer_choice == 1) {
 
-    }
-    else if (computer_choice == 1) {
+            document.getElementById("valor").innerHTML = "Rock wins scissors, you win!";
+            audioWinner(rockwins);
+            incrementScore(yourScoreSpan);
 
-        document.getElementById("valor").innerHTML = "Rock wins scissors, you win!";
-        audioWinner(rockwins);
-        incrementScore(yourScoreSpan);
+        }
+        else {
 
-    }
-    else {
+            document.getElementById("valor").innerHTML = "Paper wins rock , you loose!";
+            audioWinner(paperwins);
+            incrementScore(computerScoreSpan);
+        }
 
-        document.getElementById("valor").innerHTML = "Paper wins rock , you loose!";
-        audioWinner(paperwins);
-        incrementScore(computerScoreSpan);
-    }
+    })
 
-})
+    scissors.addEventListener('click', () => {
+        result.innerHTML = "<img src='assets/images/scissorsangrybis.png' />";
+        let resultado = 1;
 
-scissors.addEventListener('click', () => {
-    result.innerHTML = "<img src='assets/images/scissorsangrybis.png' />";
-    let resultado = 1;
-    
-    computerChoice();
+        computerChoice();
 
 
-    if (resultado == computer_choice) {
-        document.getElementById("valor").innerHTML = "Tie";
-        audioWinner(tie);
+        if (resultado == computer_choice) {
+            document.getElementById("valor").innerHTML = "Tie";
+            audioWinner(tie);
 
-    }
-    else if (computer_choice == 0) {
+        }
+        else if (computer_choice == 0) {
 
-        document.getElementById("valor").innerHTML = "Rock wins scissors, you loose!";
-        audioWinner(rockwins);
-        incrementScore(computerScoreSpan);
-        
+            document.getElementById("valor").innerHTML = "Rock wins scissors, you loose!";
+            audioWinner(rockwins);
+            incrementScore(computerScoreSpan);
 
-    }
-    else {
 
-        document.getElementById("valor").innerHTML = "Scissors wins paper, you win!";
-        audioWinner(scissors);
-        incrementScore(yourScoreSpan);
-    }
-})
+        }
+        else {
 
-paper.addEventListener('click', () => {
-    result.innerHTML = "<img src='assets/images/paperangrybis.png' />";
-    let resultado = document.getElementById("valor");
-    resultado = 2;
-    
-    computerChoice();
+            document.getElementById("valor").innerHTML = "Scissors wins paper, you win!";
+            audioWinner(scissors);
+            incrementScore(yourScoreSpan);
+        }
+    })
 
-    if (resultado == computer_choice) {
-        computer.innerHTML = "<img src='assets/images/paperangrybis.png' />";
+    paper.addEventListener('click', () => {
+        result.innerHTML = "<img src='assets/images/paperangrybis.png' />";
+        let resultado = document.getElementById("valor");
+        resultado = 2;
+        changeText();
+        computerChoice();
 
-        document.getElementById("valor").innerHTML = "Tie";
-        audioWinner(tie);
+        if (resultado == computer_choice) {
+            computer.innerHTML = "<img src='assets/images/paperangrybis.png' />";
 
-    }
-    else if (computer_choice == 0) {
-        computer.innerHTML = "<img src='assets/images/rockangrybis.jpg' />";
-        document.getElementById("valor").innerHTML = "Paper wins rock, you win!";
-        audioWinner(paperwins);
-        incrementScore(yourScoreSpan);
+            document.getElementById("valor").innerHTML = "Tie";
+            audioWinner(tie);
 
-    }
-    else {
-        computer.innerHTML = "<img src='assets/images/scissorsangrybis.png' />";
-        document.getElementById("valor").innerHTML = "Scissors wins paper , you loose!";
-        audioWinner(scissorswins);
-        incrementScore(computerScoreSpan);
-    }
-})
+        }
+        else if (computer_choice == 0) {
+            computer.innerHTML = "<img src='assets/images/rockangrybis.jpg' />";
+            document.getElementById("valor").innerHTML = "Paper wins rock, you win!";
+            audioWinner(paperwins);
+            incrementScore(yourScoreSpan);
 
+        }
+        else {
+            computer.innerHTML = "<img src='assets/images/scissorsangrybis.png' />";
+            document.getElementById("valor").innerHTML = "Scissors wins paper , you loose!";
+            audioWinner(scissorswins);
+            incrementScore(computerScoreSpan);
+        }
+    })
+}
 // function playerChoice(){
 
 // }
@@ -111,8 +112,6 @@ paper.addEventListener('click', () => {
 
 function computerChoice() {
     computer_choice = Math.floor(Math.random() * 3);
-    
-
     if (computer_choice == 0) {
         computer.innerHTML = "<img src='assets/images/rockangrybis.jpg' />";
     }
@@ -125,14 +124,23 @@ function computerChoice() {
 }
 
 function audioWinner(x) {
-
     let audio = new Audio(x);
     audio.play(x);
-
 }
 
 function incrementScore(scoreSpan) {
-    
     scoreSpan.innerText = parseInt(scoreSpan.innerText) + 1;
-    
-  }
+}
+
+function startGame() {
+    window.location.reload();
+}
+
+function changeText() {
+
+    document.querySelector('.start button').innerHTML = "Restart game";
+}
+
+
+
+playGame();
