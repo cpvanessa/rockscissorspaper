@@ -3,7 +3,6 @@ body {
     color: white;
     margin: 50px 30px auto 30px;
     font-family: Luxurious Roman, Licorice, Lobster;
-
 }
 
 h1 {
@@ -14,25 +13,20 @@ h1 {
     display: flex;
     justify-content: center;
     margin-top: 50px;
-
 }
 
 .results {
     margin-top: 50px;
-
 }
 
 .choose {
     border-radius: 100px;
-
 }
 
 .player img {
     height: 150px;
     width: 150px;
     border-radius: 100px;
-
-
 }
 
 .player div {
@@ -42,8 +36,6 @@ h1 {
 #player-choice img {
     height: 150px;
     margin-right: 30px;
-    ;
-
 }
 
 #computer img {
@@ -53,8 +45,6 @@ h1 {
 .results {
     display: flex;
     justify-content: center;
-    transition: all 2s;
-    margin-top: 10px;
 
 }
 
@@ -63,13 +53,20 @@ h1 {
     text-align: center;
     font-size: 20px;
 }
-.start{
+
+#end {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.start {
     margin-top: 25px;
     text-align: center;
     font-size: 20px;
-    
 }
-.start button{
+
+.start button {
     border: solid rgb(55, 55, 65) 5px;
     box-shadow: 2x 2px 2px rgb(45, 45, 51);
     padding: 5px 10px 5px 10px;
@@ -79,19 +76,14 @@ h1 {
     display: flex;
     justify-content: center;
     margin-top: 15px;
-
-
 }
 
 #you {
-    
+
     border: solid 3px;
     padding: 10px 60px 10px 10px;
     border-radius: 7px;
     box-shadow: 2px 2px 2px white;
-    
-
-
 }
 
 #comp {
@@ -99,13 +91,10 @@ h1 {
     padding: 10px;
     border-radius: 7px;
     box-shadow: 2px 2px 2px white;
-
 }
 
 .counter div {
     margin-right: 10px;
-
-
 }
 
 
@@ -114,8 +103,6 @@ h1 {
         height: 90px;
         width: 90px;
         border-radius: 100px;
-
-
     }
 
     .player div {

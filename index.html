@@ -17,13 +17,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <title>Rock Paper Scissors</title>
 
 </head>
 
 <body>
-
-
     <div class="container-fluid">
         <h1>Rock Paper Scissors</h1>
         <div class="player">
@@ -42,13 +42,16 @@
 
         </div>
     </div>
+
     <div class="start"><button onClick="startGame();">Choose option</button></div>
+
     <div id="valor"></div>
+
+    <div id="end"></div>
+
     <div class="container-fluid results ">
         <div id="player-choice"></div>
         <div id="computer"></div>
-
-
     </div>
 
     <div class="counter container-fluid">
@@ -60,7 +63,6 @@
             Computer :
             <span class="result-score" data-computer-score> 0</span>
         </div>
-
 
         <script src="main.js"></script>
 </body>
