@@ -80,7 +80,7 @@ function playGame() {
             incrementScore(yourScoreSpan);
         }
         endGame();
-        end
+        
     })
 
     paper.addEventListener('click', () => {
